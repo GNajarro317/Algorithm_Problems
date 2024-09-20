@@ -1,0 +1,11 @@
+Task
+Implement an HTTP Router using a Trie data structure, similar to those found in typical web servers. The router should efficiently map URL paths, such as "/", "/about", or "/blog/2019-01-15/my-awesome-blog-post", to their corresponding content handlers.
+
+Explanation
+The time complexity of the insert and find operations in the RouteTrieNode class is O(1) because it involves inserting or finding a node in a dictionary, which has an average time complexity of O(1). The time complexity of the insert and find operations in the RouteTrie class is O(n) where n is the number of parts in the path. The insert operation iterates through each part of the path to insert the nodes, and the find operation iterates through each part of the path to find the handler. The split_path method also has a time complexity of O(n) where n is the number of parts in the path.
+
+The RouteTrieNode class represents a node in the trie data structure used to store the routes. The insert method is used to insert a new node into the trie. If the part does not exist in the children dictionary, a new RouteTrieNode is created and added to the children dictionary.
+The RouteTrie class represents the trie data structure that stores the routes.
+The insert method is used to insert a route into the trie. It takes a list of path_parts and a handler as input. It iterates over each part in the path_parts list and inserts a new node into the trie using the insert method of the RouteTrieNode class.The find method is used to find the handler for a given route. It takes a list of path_parts as input and iterates over each part in the list. It updates the node variable to the child node corresponding to the part.
+The Router class represents the main router. 
+The add_handler method is used to add a handler for a specific route. It takes a path and a handler as input. The lookup method is used to lookup the handler for a given route. The split_path method is used to split a path into its parts. If the path is '/' or '', it returns a list with a single empty string. Otherwise, it strips the leading and trailing slashes from the path and splits it using the '/' delimiter.
